@@ -4,8 +4,5 @@
   --color-main: #730303;
   --color-secondary: #400207;
   --color-light: #F2A0BE;
-}
-
-.h-menu {
-  height: calc(100vh - 80px);
+  --color-opaque: #C4C4C4;
 }
