@@ -1,13 +1,16 @@
 import { Outlet } from "react-router-dom";
+import { MenuProvider } from "./contexts/MenuContext";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
 const App = () => {
   return (
-    <div className="overflow-x-hidden">
-        <Header/>
-        <Outlet/>
-        <Footer/>
+    <div className={`overflow-x-hidden flex flex-col`}>
+      <MenuProvider>
+        <Header />
+        <Outlet />
+        <Footer />
+      </MenuProvider>
     </div>
   );
 };
