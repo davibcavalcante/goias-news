@@ -1,21 +1,16 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useEffect } from "react";
-import { ChevronRight, Coins, Goal, Instagram, Vote, Zap } from "lucide-react";
+import { ChevronRight, Instagram } from "lucide-react";
+import { getNavLinks } from "../../utils/navigation/links";
 
 const Nav = ({ isMenuOpen }) => {
-
   useEffect(() => {
     const body = document.querySelector('body');
     body.style.overflowY = isMenuOpen ? 'hidden' : 'auto';
   }, [isMenuOpen]);
 
-  const navLinks = [
-    { label: 'Últimas notícias', icon: <Zap className="text-main md:hidden" />, path: '/' },
-    { label: 'Esportes', icon: <Goal className="text-main md:hidden" />, path: '/noticias/esportes' },
-    { label: 'Política', icon: <Vote className="text-main md:hidden" />, path: '/noticias/politica' },
-    { label: 'Economia', icon: <Coins className="text-main md:hidden" />, path: '/noticias/economia' },
-  ]
+  const navLinks = getNavLinks();
 
   return (
     <motion.nav
@@ -30,7 +25,7 @@ const Nav = ({ isMenuOpen }) => {
           {navLinks.map((link, index) =>
             <li className="flex items-center justify-between" key={index}>
               <section className="flex items-center gap-2">
-                {link.icon}
+                <link.Icon className="text-main md:hidden" />
                 <Link to={link.path} className="font-semibold text-secondary md:text-white md:font-normal md:hover:text-opaque duration-300">{link.label}</Link>
               </section>
               <ChevronRight className="text-secondary md:hidden" />
