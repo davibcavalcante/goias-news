@@ -1,42 +1,23 @@
-import React, { useEffect, useState } from "react";
+import News from '../components/News/News';
+import useFetchArticles from '../hooks/useFetchArticles';
 
 const Home = () => {
-  const [articles, setArticles] = useState([]);
+  const { articles, loading, error } = useFetchArticles('rss');
 
-  useEffect(() => {
-    const fetchArticles = async () => {
-      try {
-        const response = await fetch("http://localhost:3000/api/rss");
-        const data = await response.json();
-        setArticles(data);
-      } catch (error) {
-        console.error("Erro ao buscar artigos:", error);
-      }
-    };
-    fetchArticles();
-  }, []);
+  if (loading) {
+    return <div>Carregando...</div>;
+  }
+
+  if (error) {
+    return <div>Erro ao carregar os artigos: {error.message}</div>;
+  }
 
   return (
-    <div className="p-4">
-      <h1 className="text-xl font-bold mb-4">Últimas Notícias</h1>
-      <ul>
-        {articles.map((article, index) => (
-          <li key={index} className="mb-4">
-            <img src={article.image} alt="" />
-            <a
-              href={article.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-500 hover:underline"
-            >
-              {article.title}
-            </a>
-            <p className="text-sm text-gray-600">{article.pubDate}</p>
-            <p className="text-sm">{article.content}</p>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <main className="p-4 flex flex-col gap-5 md:flex-row md:flex-wrap md:justify-between lg:w-5xl lg:m-auto">
+      {articles.map((article, index) =>
+        <News key={index} title={article.title} link={article.link} pubDate={article.pubDate} image={article.image} isMain={index === 0} />
+      )}
+    </main>
   );
 };
 
