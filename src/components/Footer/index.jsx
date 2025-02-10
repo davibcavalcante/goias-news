@@ -9,7 +9,7 @@ const Footer = () => {
 
   return (
     <footer className="bg-main lg:flex lg:flex-col lg:items-center">
-      <section className='flex flex-col gap-4 p-8 xl:gap-8 lg:w-6xl'>
+      <section className='flex flex-col gap-4 p-8 xl:gap-8 lg:w-5xl'>
         <section className='flex items-center'>
           <Link to={'/'} className='w-fit'>
             <img src={logo} alt="Goiás News" className="w-12" />
@@ -57,7 +57,9 @@ const Footer = () => {
               <span className='text-white text-xl font-semibold'>Redes sociais</span>
               <section className='flex flex-col gap-2'>
                 <Link
-                  to='/termosuso'
+                  to='https://www.instagram.com/goiasnews24h/'
+                  target='_blank'
+                  rel="noopener noreferrer"
                   className="text-white font-light text-lg underline flex  items-center gap-2"
                 >
                   <Instagram/> @goiasnews
@@ -66,7 +68,7 @@ const Footer = () => {
             </section>
           </section>
           <div className='h-auto w-[1px] bg-opaque'></div>
-          <section className='lg:w-5/12'>
+          <section className='md:w-5/12'>
             <MailContact />
           </section>
         </section>
