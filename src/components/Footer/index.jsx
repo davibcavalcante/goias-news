@@ -9,7 +9,7 @@ const Footer = () => {
 
   return (
     <footer className="bg-main lg:flex lg:flex-col lg:items-center">
-      <section className='flex flex-col gap-4 p-8 xl:gap-8 lg:w-5xl'>
+      <section className='flex flex-col gap-4 p-8 xl:gap-8 lg:w-5xl 2xl:w-7xl'>
         <section className='flex items-center'>
           <Link to={'/'} className='w-fit'>
             <img src={logo} alt="Goiás News" className="w-12" />

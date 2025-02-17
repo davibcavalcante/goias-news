@@ -12,7 +12,7 @@ const Header = () => {
 
   return (
     <header className="bg-main">
-      <section className="p-4 flex items-center relative lg:w-5xl lg:m-auto">
+      <section className="p-4 flex items-center relative lg:w-5xl lg:m-auto 2xl:w-7xl">
         <section className="flex items-center gap-4 flex-1 md:border-r md:border-white pr-4 md:flex-none">
           <Link to={'/'}>
             <img src={logo} alt="Goiás News" className="w-10" />
