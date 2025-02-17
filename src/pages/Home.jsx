@@ -13,9 +13,16 @@ const Home = () => {
   }
 
   return (
-    <main className="p-4 flex flex-col gap-5 md:flex-row md:flex-wrap md:justify-between lg:w-5xl lg:m-auto 2xl:w-7xl">
+    <main className="p-4 grid gap-4 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
       {articles.map((article, index) =>
-        <News key={index} title={article.title} link={article.link} pubDate={article.pubDate} image={article.image} isMain={index === 0} />
+        <News
+          key={index}
+          title={article.title}
+          link={article.link}
+          pubDate={article.pubDate}
+          image={article.image}
+          isMain={index === 0}
+        />
       )}
     </main>
   );
