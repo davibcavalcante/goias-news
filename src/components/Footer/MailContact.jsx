@@ -13,6 +13,9 @@ const MailContact = () => {
         <textarea name="content" placeholder="Digite seu email aqui" className="bg-white p-2 rounded-sm h-20">
 
         </textarea>
+        <button type="submit" className="bg-white text-main px-4 py-2 border-0 rounded-sm block w-fit self-end">
+          Enviar
+        </button>
       </form>
     </section>
   );
