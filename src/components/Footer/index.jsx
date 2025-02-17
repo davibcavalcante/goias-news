@@ -73,8 +73,8 @@ const Footer = () => {
           </section>
         </section>
       </section>
-      <section className='bg-opaque p-2 w-full'>
-        <p className='text-center'>&copy; Goiás News 2025, Todos os direitos reservados</p>
+      <section className='bg-opaque p-1 w-full'>
+        <p className='text-center text-sm'>&copy; Goiás News 2025, Todos os direitos reservados</p>
       </section>
     </footer>
   );
