@@ -13,18 +13,16 @@ const Home = () => {
   }
 
   return (
-    <main className="p-4 grid grid-cols-1 gap-y-4 md:gap-4 md:grid-cols-2 lg:grid-cols-2 max-w-7xl mx-auto">
-      {articles.map((article, index) =>
-        <News
-          key={index}
-          title={article.title}
-          link={article.link}
-          pubDate={article.pubDate}
-          image={article.image}
-          isMain={index === 0}
-        />
-      )}
-    </main>
+    <section>
+      <main className="p-4 grid grid-cols-1 gap-y-4 md:gap-4 md:grid-cols-2 lg:w-5xl 2xl:w-7xl mx-auto">
+        {articles.map((article, index) =>
+          <News key={index} title={article.title} link={article.link} pubDate={article.pubDate} image={article.image} isMain={index === 0} />
+        )}
+      </main>
+      <section className="p-4 grid grid-cols-1 gap-y-4 md:gap-4 md:grid-cols-2 lg:grid-cols-2 max-w-7xl mx-auto">
+
+      </section>
+    </section>
   );
 };
 
